@@ -1,0 +1,1669 @@
+/* Budget model so bo cua ct_l2c_top -- sinh tu spec (emit_lib.py). Thay bang ETM that (do_extract_model) khi block giao. */
+library(ct_l2c_top_prelim) {
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1uA";
+  leakage_power_unit : "1nw";
+  capacitive_load_unit (1,ff);
+  pulling_resistance_unit : "1kohm";
+  nom_process : 1;
+  nom_temperature : 25;
+  nom_voltage : 1.1;
+  operating_conditions(typical) { process : 1; temperature : 25; voltage : 1.1; tree_type : balanced_tree; }
+  default_operating_conditions : typical;
+  default_max_transition : 0.15;
+  input_threshold_pct_rise : 50; input_threshold_pct_fall : 50; output_threshold_pct_rise : 50; output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20; slew_upper_threshold_pct_rise : 80; slew_lower_threshold_pct_fall : 20; slew_upper_threshold_pct_fall : 80;
+  type (bus_32_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 33;
+    bit_from : 32;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_3_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 4;
+    bit_from : 3;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_2_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 3;
+    bit_from : 2;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_1_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 2;
+    bit_from : 1;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_4_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 5;
+    bit_from : 4;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_12_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 13;
+    bit_from : 12;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_511_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 512;
+    bit_from : 511;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_43_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 44;
+    bit_from : 43;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_127_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 128;
+    bit_from : 127;
+    bit_to : 0;
+    downto : true;
+  }
+  type (bus_33_0) {
+    base_type : array;
+    data_type : bit;
+    bit_width : 34;
+    bit_from : 33;
+    bit_to : 0;
+    downto : true;
+  }
+  cell(ct_l2c_top) {
+    area : 6351409.7;
+    dont_use : true;
+    dont_touch : true;
+    interface_timing : true;
+    bus(ciu_l2c_addr_bank_0) {
+      bus_type : bus_32_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_addr_bank_1) {
+      bus_type : bus_32_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_addr_vld_bank_0) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_addr_vld_bank_1) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_clr_cp_bank_0) {
+      bus_type : bus_3_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_clr_cp_bank_1) {
+      bus_type : bus_3_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_ctcq_req_bank_0) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_ctcq_req_bank_1) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_data_latency) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_data_setup) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_data_vld_bank_0) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_data_vld_bank_1) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_dca_addr_bank_0) {
+      bus_type : bus_32_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_dca_addr_bank_1) {
+      bus_type : bus_32_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_dca_req_bank_0) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_dca_req_bank_1) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_hpcp_bus_bank_0) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_hpcp_bus_bank_1) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_icc_mid_bank_0) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_icc_mid_bank_1) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_icc_type_bank_0) {
+      bus_type : bus_1_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_icc_type_bank_1) {
+      bus_type : bus_1_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_iprf) {
+      bus_type : bus_1_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_mid_bank_0) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_mid_bank_1) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_prf_ready) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_rdl_ready_bank_0) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_rdl_ready_bank_1) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_rst_req) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_set_cp_bank_0) {
+      bus_type : bus_3_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_set_cp_bank_1) {
+      bus_type : bus_3_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_sid_bank_0) {
+      bus_type : bus_4_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_sid_bank_1) {
+      bus_type : bus_4_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_snpl2_ready_bank_0) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_snpl2_ready_bank_1) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_src_bank_0) {
+      bus_type : bus_1_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_src_bank_1) {
+      bus_type : bus_1_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_tag_latency) {
+      bus_type : bus_2_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_tag_setup) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_l2c_tprf) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_type_bank_0) {
+      bus_type : bus_12_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_type_bank_1) {
+      bus_type : bus_12_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_wdata_bank_0) {
+      bus_type : bus_511_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    bus(ciu_l2c_wdata_bank_1) {
+      bus_type : bus_511_0;
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_top_clk) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(ciu_xx_no_op) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.600"); }
+        fall_constraint(scalar) { values("0.600"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(cpurst_b) {
+      direction : input;
+      capacitance : 2.0;
+    }
+    pin(forever_cpuclk) {
+      direction : input;
+      clock : true;
+      capacitance : 2.0;
+    }
+    pin(l2c_ciu_addr_ready_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_addr_ready_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_cmplt_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_cmplt_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_cp_bank_0) {
+      bus_type : bus_3_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_cp_bank_1) {
+      bus_type : bus_3_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_ctcq_cmplt_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_ctcq_cmplt_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_ctcq_ready_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_ctcq_ready_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_data_bank_0) {
+      bus_type : bus_511_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_data_bank_1) {
+      bus_type : bus_511_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_data_ready_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_data_ready_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_data_ready_gate_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_data_ready_gate_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_dbg_info) {
+      bus_type : bus_43_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_dca_cmplt_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_dca_cmplt_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_dca_data_bank_0) {
+      bus_type : bus_127_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_dca_data_bank_1) {
+      bus_type : bus_127_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_dca_ready_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_dca_ready_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_hpcp_acc_inc_bank_0) {
+      bus_type : bus_1_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_hpcp_acc_inc_bank_1) {
+      bus_type : bus_1_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_hpcp_mid_bank_0) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_hpcp_mid_bank_1) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_hpcp_miss_inc_bank_0) {
+      bus_type : bus_1_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_hpcp_miss_inc_bank_1) {
+      bus_type : bus_1_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_prf_addr) {
+      bus_type : bus_33_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_prf_prot) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_prf_vld) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_rdl_addr_bank_0) {
+      bus_type : bus_32_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_rdl_addr_bank_1) {
+      bus_type : bus_32_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_rdl_dvld_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_rdl_dvld_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_rdl_mid_bank_0) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_rdl_mid_bank_1) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_rdl_prot_bank_0) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_rdl_prot_bank_1) {
+      bus_type : bus_2_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_rdl_rvld_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_rdl_rvld_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_resp_bank_0) {
+      bus_type : bus_4_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_resp_bank_1) {
+      bus_type : bus_4_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_sid_bank_0) {
+      bus_type : bus_4_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_sid_bank_1) {
+      bus_type : bus_4_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_snpl2_addr_bank_0) {
+      bus_type : bus_32_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_snpl2_addr_bank_1) {
+      bus_type : bus_32_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_snpl2_ini_sid_bank_0) {
+      bus_type : bus_4_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    bus(l2c_ciu_snpl2_ini_sid_bank_1) {
+      bus_type : bus_4_0;
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_snpl2_vld_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_ciu_snpl2_vld_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_data_clk_bank_0) {
+      direction : input;
+      clock : true;
+      capacitance : 2.0;
+    }
+    pin(l2c_data_clk_bank_1) {
+      direction : input;
+      clock : true;
+      capacitance : 2.0;
+    }
+    pin(l2c_data_ram_clk_en_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.400"); }
+        cell_fall(scalar) { values("1.400"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_data_ram_clk_en_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.400"); }
+        cell_fall(scalar) { values("1.400"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_icg_en) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.850"); }
+        fall_constraint(scalar) { values("0.850"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+    pin(l2c_sysio_flush_done) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.400"); }
+        cell_fall(scalar) { values("1.400"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_sysio_flush_idle) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.400"); }
+        cell_fall(scalar) { values("1.400"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_tag_clk_bank_0) {
+      direction : input;
+      clock : true;
+      capacitance : 2.0;
+    }
+    pin(l2c_tag_clk_bank_1) {
+      direction : input;
+      clock : true;
+      capacitance : 2.0;
+    }
+    pin(l2c_tag_ram_clk_en_bank_0) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.400"); }
+        cell_fall(scalar) { values("1.400"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_tag_ram_clk_en_bank_1) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.400"); }
+        cell_fall(scalar) { values("1.400"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(l2c_xx_no_op) {
+      direction : output;
+      max_capacitance : 100.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : rising_edge;
+        cell_rise(scalar) { values("1.650"); }
+        cell_fall(scalar) { values("1.650"); }
+        rise_transition(scalar) { values("0.100"); }
+        fall_transition(scalar) { values("0.100"); }
+      }
+    }
+    pin(pad_yy_icg_scan_en) {
+      direction : input;
+      capacitance : 2.0;
+    }
+    pin(sysio_l2c_flush_req) {
+      direction : input;
+      capacitance : 2.0;
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : setup_rising;
+        rise_constraint(scalar) { values("0.600"); }
+        fall_constraint(scalar) { values("0.600"); }
+      }
+      timing() {
+        related_pin : "forever_cpuclk";
+        timing_type : hold_rising;
+        rise_constraint(scalar) { values("-0.350"); }
+        fall_constraint(scalar) { values("-0.350"); }
+      }
+    }
+  }
+}

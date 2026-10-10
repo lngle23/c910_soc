@@ -1,0 +1,7 @@
+instance_top,module,block,x_um,y_um,orient,w_um,h_um,x2_um,y2_um
+x_ct_l2c_top,ct_l2c_top,L2C,79.8,78.4,R0,3436.91,1848.0,3516.71,1926.4
+x_ct_top_0/x_c910_be,c910_be,BE,79.8,1971.2,R0,1356.79,2240.0,1436.59,4211.2
+x_ct_ciu_top,ct_ciu_top,CIU,1478.96,1971.2,R0,638.59,2240.0,2117.55,4211.2
+x_ct_top_1/x_c910_be,c910_be,BE,2159.92,1971.2,MY,1356.79,2240.0,3516.71,4211.2
+x_ct_top_0/x_ct_ifu_top,ct_ifu_top,FE,79.8,4256.0,R0,1356.79,728.0,1436.59,4984.0
+x_ct_top_1/x_ct_ifu_top,ct_ifu_top,FE,2159.92,4256.0,MY,1356.79,728.0,3516.71,4984.0

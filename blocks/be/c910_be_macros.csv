@@ -1,0 +1,15 @@
+instance,cell,w_um,h_um,goi_y_x,goi_y_y,goi_y_orient
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank0_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,10.07,11.2,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank1_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,222.11,11.2,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank2_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,434.15,11.2,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank3_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,646.19,11.2,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank4_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,858.23,11.2,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank5_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,1070.27,11.2,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank6_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,10.07,225.4,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_data_bank7_array/x_ct_spsram_2048x32/x_ct_f_spsram_2048x32/x_sram_macro,fakeram45_2048x32,191.9,193.2,222.11,225.4,R0
+x_ct_mmu_top/x_ct_mmu_jtlb/x_ct_mmu_jtlb_tag_array/x_ct_spsram_256x196/x_ct_f_spsram_256x196/x_sram_macro,fakeram45_256x196,162.26,176.4,434.15,225.4,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_ld_tag_array/x_ct_spsram_512x54/x_ct_f_spsram_512x54/x_sram_macro,fakeram45_512x54,127.3,127.4,616.55,225.4,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_st_tag_array/x_ct_spsram_512x52/x_ct_f_spsram_512x52/x_sram_macro,fakeram45_512x52,124.26,126.0,763.99,225.4,R0
+x_ct_mmu_top/x_ct_mmu_jtlb/x_ct_mmu_jtlb_data_array/x_ct_spsram_256x84_bank1/x_ct_f_spsram_256x84/x_sram_macro,fakeram45_256x84,113.24,113.4,908.39,225.4,R0
+x_ct_mmu_top/x_ct_mmu_jtlb/x_ct_mmu_jtlb_data_array/x_ct_spsram_256x84_bank0/x_ct_f_spsram_256x84/x_sram_macro,fakeram45_256x84,113.24,113.4,1041.77,225.4,R0
+x_ct_lsu_top/x_ct_lsu_dcache_top/x_ct_lsu_dcache_st_dirty_array/x_ct_spsram_512x7/x_ct_f_spsram_512x7/x_sram_macro,fakeram45_512x7,54.53,54.6,1175.15,225.4,R0
